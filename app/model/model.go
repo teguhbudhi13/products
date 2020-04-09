@@ -7,11 +7,11 @@ import (
 	_ "github.com/lib/pq"
 )
 
-// product schema
+// Product schema
 type Product struct {
-	ID    int    `gorm:"primary_key; auto_increment" sql:"id" json:"id"`
-	Name  string `gorm:"not null" json:"name"`
-	Email string `gorm:"not null" json:"email"`
+	ID     int    `gorm:"primary_key; auto_increment" sql:"id" json:"id"`
+	Produk string `gorm:"not null" json:"produk"`
+	Harga  string `gorm:"not null" json:"harga"`
 }
 
 // DBMigrate will create and migrate the tables, and then make the some relationships if necessary
