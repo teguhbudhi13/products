@@ -7,11 +7,9 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+	"github.com/teguhbudhi13/products/app/handler"
 	"github.com/teguhbudhi13/products/app/model"
 	"github.com/teguhbudhi13/products/config"
-	//	"github.com/teguhbudhi13/products/app/handler"
-	//	"github.com/teguhbudhi13/products/app/model"
-	//	"github.com/teguhbudhi13/products/config"
 )
 
 // App has router and db instances
@@ -45,7 +43,7 @@ func (a *App) Initialize(config *config.Config) {
 // setRouters sets the all required routers
 func (a *App) setRouters() {
 	// Routing for handling the products
-	a.Get("/products", a.handleRequest(handler.GetAllproduct))
+	a.Get("/products", a.handleRequest(handler.GetAllproducts))
 	a.Post("/products", a.handleRequest(handler.Createproduct))
 	a.Get("/products/{id:[0-9]+}", a.handleRequest(handler.Getproduct))
 	a.Put("/products/{id:[0-9]+}", a.handleRequest(handler.Updateproduct))
